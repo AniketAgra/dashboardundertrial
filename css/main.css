@@ -1,0 +1,572 @@
+/* Global Settings */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Ubuntu', sans-serif;
+
+   
+}
+#su-logo{
+margin-top: 10px;
+border-radius: 25px;
+}
+
+:root {
+    --blue: #3f454e;
+    --white: #FFF;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 4px;
+}
+
+/* button (Tob & Bottom Corners) */
+/* ::-webkit-scrollbar-button {
+    background: rgb(231, 231, 250);
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-black-50);
+} */
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+/* The track NOT covered by the handle.
+::-webkit-scrollbar-track-piece {
+    background: #000;
+}
+/* Corner */
+::-webkit-scrollbar-corner {
+    background: var(--white);
+}
+
+/* Resizer */
+::-webkit-resizer {
+    background: var(--white);
+}
+
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+   
+}
+
+html {
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+/* Navigation */
+.container .navigation {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    overflow: hidden;
+}
+
+.container .navigation.active {
+    width: 80px;
+}
+
+.container .navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.container .navigation ul li {
+    position: relative;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.container .navigation ul li:hover,
+.container .navigation ul li.hovered {
+    background: var(--white);
+}
+
+.container .navigation ul li:first-child {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.container .navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: var(--white);
+}
+
+.container .navigation ul li:hover a,
+.container .navigation ul li.hovered a {
+    color: var(--blue);
+}
+
+.container .navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.container .navigation ul li a .icon ion-icon {
+    font-size: 1.75em;
+}
+
+.container .navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+    text-align: start;
+}
+
+.container .navigation ul li:hover a::before,
+.container .navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: transparent;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.container .navigation ul li:hover a::after,
+.container .navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: transparent;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+/* Main Section */
+.main {
+    position:absolute;
+    width: calc(100% - 250px);
+    left: 250px;
+    min-height: 100vh;
+    background-color: ;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar {
+    width: 94.15%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: #a6b1abf3;
+    position:fixed;
+    z-index: 10;
+    
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+    
+}
+
+/* Search */
+.search {
+    float: inline-end;
+    width: 650px;
+    margin: 5px;
+    position:relative;
+}
+#pri_name{
+    margin: 4%;
+}
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    padding: 5px 20px;
+    border: 1px solid var(--black2);
+    padding-left: 35px;
+    font-size: 18px;
+}
+
+.search label ion-icon {
+    position: absolute;
+    top: 0 !important;
+    left: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+/* Prisoner details*/
+.prisoner{
+    background-color:#fbfded;
+    display: flex;
+    margin-top: 100px;
+}
+
+.pri-img{
+   width:40%; ;
+   position: relative;
+   margin-top:5%;
+   margin-left: 5% ;
+   padding: 5px;
+   font-style: Garamond ;
+   text-align: center;
+}
+
+li{
+    display: flex;
+}
+.info-align{
+ margin-left: 0%;
+ padding: 20px;
+ font-size: larger;
+ font-style: italic;
+ width: 50%;
+ border-radius: 20px;
+ background-image: linear-gradient(to right,rgb(250, 240, 222),rgb(241, 241, 241));
+ text-align: left;
+ 
+}
+    
+
+/* User Account */
+.user {
+    position:relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 12%;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.accountMenu {
+    position: absolute;
+    top: 75px;
+    right: 10px;
+    padding: 10px 20px;
+    right: 11%;
+    background: var(--white);
+    width: 200px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.accountMenu.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.accountMenu::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.accountMenu h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    color: #555;
+    line-height: 1.2em;
+}
+
+.accountMenu h3 span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #cecece;
+}
+
+.accountMenu ul li {
+    padding: 10px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.accountMenu ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: .5;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.accountMenu ul li:hover img {
+    opacity: 1;
+}
+
+.accountMenu ul li a {
+    display: inline-block;
+    color: #555;
+    font-weight: 500;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.accountMenu ul li:hover a {
+    color: var(--blue);
+}
+
+/* Data Details */
+.details {
+margin: 20px;
+padding: 20px;
+border: 2px solid var(--blue);
+border-radius: 20px;
+background-image: linear-gradient(to right,rgb(248, 224, 228),rgb(255, 254, 254));
+
+}
+table{
+    font-size: larger;
+    border-spacing: 25px;
+}
+.det{
+    color: rgb(0, 185, 0);
+}
+.det1{
+    color: red;
+}
+.cardHeader{
+    border: 2px,solid,blanchedalmond;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 20px;
+    color: #1f51a2;
+    display: flex;
+    
+    
+    
+}
+/* Responsive Design */
+@media (max-width: 991px) {
+
+    .container .navigation {
+        left: -250px;
+    }
+
+    .container .navigation.active {
+        width: 250px;
+        left: 0;
+    }
+
+    .graphBox {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        left: 250px;
+    }
+
+    .cardBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    * {
+        cursor: none;
+    }
+
+    .details {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .recentOrders {
+        overflow-x: auto;
+    }
+
+    .status.inprogress {
+        white-space: nowrap;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cardHeader h2 {
+        font-size: 20px;
+    }
+
+    .user {
+        min-width: 50px;
+    }
+
+    .container .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1600;
+    }
+
+    .container .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle {
+        z-index: 10001;
+    }
+
+    .main.active .toggle {
+        color: var(--white);
+        position: fixed;
+        right: 0;
+        left: initial;
+    }
+
+    .main.active {
+        left: -250px;
+    }
+}
+
+@media (max-width: 370px) {
+    .graphBox {
+        overflow-x: auto;
+    }
+}
+
+/* End of Styling :) */
